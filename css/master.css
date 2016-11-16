@@ -34,7 +34,6 @@
 .projects-header {
   background-color: #292c33;
   color: white;
-  font-weight: bolder;
   font-size: 12px;
   margin-left: 27px;
 }
@@ -67,6 +66,15 @@
   width: 263px;
   min-height: 27px;
   height: 27px;
+}
+
+.projects md-list-item:not([disabled]):hover {
+  border-radius: 15px !important;
+
+}
+
+.projects md-list-item:not([disabled]) {
+  border-radius: 5px !important;
 }
 
 .projects .active {

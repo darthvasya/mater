@@ -27,13 +27,13 @@
         <div class="projects">
 
           <md-content>
-            <md-subheader class="md-no-sticky projects-header">
+            <md-subheader class="md-no-sticky projects-header md-subhead">
               Projects
               <!-- <md-button class="md-icon-button"> -->
-                <span class="icons8-plus addproj"></span>
+                <span class="icons8-plus addproj" ng-click="toggleSidenav('add-project')"></span>
               <!-- </md-button> -->
             </md-subheader>
-             <md-list-item class="active" ng-click="null">
+             <md-list-item class="active" ng-click="null" >
                <h3>Private<span class="count">8</span></h3>
              </md-list-item>
              <md-list-item ng-click="null">
@@ -66,36 +66,18 @@
               </md-button>
             </div>
           </md-toolbar>
-        <md-content>
-          <div class="empty-content" layout="row" layout-align="center center">
-            <i class="icons8-todo-list"></i>
-            <p>Have a good day</p>
-          </div>
-          <md-button class="md-fab add-task-btn"  ng-click="toggleRight()" class="md-accent">
-            <span class="icons8-plus"></span>
-          </md-button>
 
-        </md-content>
+          <!--  -->
+          <ng-include src="'templates/no-tasks.html'"></ng-include>
+
+
 
         <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-
-          <md-toolbar class="sidenav-toolbar">
-            <md-button class="md-icon-button">
-              <span ng-click="close()" class="icons8-delete-2"></span>
-            </md-button>
-            <span class="head-text md-subhead">Create New Task</span>
-          </md-toolbar>
-          <md-content layout-padding class="sidenav-body">
-            <form>
-              <md-input-container>
-                <label for="testInput">Test input</label>
-                <input type="text" id="testInput" md-autofocus>
-              </md-input-container>
-            </form>
-
-          </md-content>
-
+          <!-- <ng-include ng-src="{{sidenav_type_url}}"></ng-include> -->
+          <ng-view></ng-view>
         </md-sidenav>
+
+
 
       </div>
 
@@ -106,8 +88,9 @@
     <script src="node_modules/angular-animate/angular-animate.js" charset="utf-8"></script>
     <script src="node_modules/angular-aria/angular-aria.js" charset="utf-8"></script>
     <script src="node_modules/angular-material/angular-material.js" charset="utf-8"></script>
+    <script src="node_modules/angular-route/angular-route.js" charset="utf-8"></script>
 
     <script src="app.js" charset="utf-8"></script>
-
+    <script src="Controllers/appController.js" charset="utf-8"></script>
   </body>
 </html>
