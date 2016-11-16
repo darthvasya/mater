@@ -1,0 +1,83 @@
+.left {
+  background-color: #292c33;
+  height: 700px;
+  width: 325px;
+}
+
+.center {
+  background-color: #f7f7f7;
+  height: 700px;
+}
+
+.person {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  color: white;
+}
+
+.person img {
+  border: 1px solid white;
+  border-radius: 50% 50%;
+  padding: 5px;
+}
+
+.person .name {
+  position: absolute;
+  top: 20px;
+  left: 75px;
+  width: 150px;
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.projects {
+  margin-top: 96px;
+}
+
+.projects-header {
+  background-color: #292c33;
+  color: white;
+  font-weight: bolder;
+  font-size: 12px;
+  margin-left: 27px;
+}
+
+.addproj {
+  position: absolute;
+  margin-left: 175px;
+  margin-top: -3px;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+
+.projects md-content {
+  background-color: #292c33;
+}
+
+.projects md-list-item {
+  margin-left: 28px;
+  border-radius: 5px;
+
+  padding: 5px;
+  padding-left: 0px;
+  margin-bottom: 1px;
+
+  font-size: 12px;
+  font-weight: 100;
+  color: white;
+
+  width: 263px;
+  min-height: 27px;
+  height: 27px;
+}
+
+.projects .active {
+    background-color: #6B6B99;
+}
+
+.projects md-list-item h3 .count {
+  position: absolute;
+  right: 10px;
+}
