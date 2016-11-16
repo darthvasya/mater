@@ -1,0 +1,133 @@
+/*LEFT BAR*/
+.left {
+  background-color: #292c33;
+  height: 663px;
+  width: 325px;
+}
+
+.person {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  color: white;
+}
+
+.person img {
+  border: 1px solid white;
+  border-radius: 50% 50%;
+  padding: 5px;
+}
+
+.person .name {
+  position: absolute;
+  top: 20px;
+  left: 75px;
+  width: 150px;
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.projects {
+  margin-top: 96px;
+}
+
+.projects-header {
+  background-color: #292c33;
+  color: white;
+  font-weight: bolder;
+  font-size: 12px;
+  margin-left: 27px;
+}
+
+.addproj {
+  position: absolute;
+  margin-left: 175px;
+  margin-top: -3px;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+
+.projects md-content {
+  background-color: #292c33;
+}
+
+.projects md-list-item {
+  margin-left: 28px;
+  border-radius: 5px;
+
+  padding: 5px;
+  padding-left: 0px;
+  margin-bottom: 1px;
+
+  font-size: 12px;
+  font-weight: 100;
+  color: white;
+
+  width: 263px;
+  min-height: 27px;
+  height: 27px;
+}
+
+.projects .active {
+    background-color: #6B6B99;
+}
+
+.projects md-list-item h3 .count {
+  position: absolute;
+  right: 10px;
+}
+/*END LEFT BAR*/
+
+/* CENTER*/
+.center md-toolbar {
+  min-height: 50px;
+  height: 50px;
+
+}
+.md-toolbar-tools {
+  background-color: #F7F7F7;
+  color: #B1B1C8;
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.center md-toolbar .icons8-search,  .center md-toolbar .icons8-more {
+  font-size: 25px;
+}
+
+.center .empty-content .icons8-todo-list{
+  color: #B1B1C8;
+  font-size: 200px;
+}
+.center md-content .empty-content {
+  min-height: 613px;
+  height: 613px;
+  background-color: #F7F7F7;
+}
+
+.center md-content .empty-content p {
+  color: #B1B1C8;
+  font-size: 24px;
+  position: absolute;
+  top: 66%;
+  text-align: center;
+}
+
+.center md-content .empty-content i {
+  position: absolute;
+  top: 34%;
+}
+
+.center md-content .add-task-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #6B6B99;
+  font-size: 25px;
+}
+
+.add-task-btn:not([disabled]):hover {
+    background-color: black !important;
+}
+
+/*END CENTER*/
