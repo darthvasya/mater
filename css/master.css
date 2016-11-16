@@ -137,3 +137,43 @@
 }
 
 /*END CENTER*/
+
+
+/*RIGHT SIDENAV COMMON*/
+md-sidenav {
+  background-color: #292C33;
+}
+
+.sidenav-toolbar, .sidenav-body {
+  background-color: #292C33 !important;
+}
+.icons8-delete-2 {
+    font-size: 21px;
+}
+
+.icons8-delete-2::after {
+  content: "ESC";
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: 10px;
+}
+
+.head-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: -24px;
+}
+
+.sidenav-body label, .sidenav-body input, .sidenav-body md-button{
+  color: white !important;
+}
+
+.sidenav-body input {
+  border-color: white;
+}
+
+.sidenav-body input:focus {
+  border-color: white !important;
+}
+/*END RIGHT SIDENAW COMMON*/

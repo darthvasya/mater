@@ -7,6 +7,7 @@
 
     $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
+
     $scope.isOpenRight = function(){
       return $mdSidenav('right').isOpen();
     };
@@ -54,6 +55,7 @@
           $log.debug("close RIGHT is done");
         });
     };
+
   });
 //
 
