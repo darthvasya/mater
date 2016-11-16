@@ -77,19 +77,21 @@
 
         </md-content>
 
-        <md-sidenav class="md-sidenav-right" md-component-id="right"
-                    md-disable-backdrop md-whiteframe="10">
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
-          <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+          <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Sidenav Right</h1>
           </md-toolbar>
-
-          <md-content layout-margin>
-            <p>
-              This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-            </p>
-            <md-button ng-click="toggleRight()" class="md-accent">
-              Close this Sidenav
+          <md-content layout-padding>
+            <form>
+              <md-input-container>
+                <label for="testInput">Test input</label>
+                <input type="text" id="testInput"
+                       ng-model="data" md-autofocus>
+              </md-input-container>
+            </form>
+            <md-button ng-click="close()" class="md-primary">
+              Close Sidenav Right
             </md-button>
           </md-content>
 
