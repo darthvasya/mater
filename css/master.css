@@ -127,7 +127,13 @@
 }
 
 .add-task-btn:not([disabled]):hover {
-    background-color: black !important;
+  background-color: #6B6B99 !important;
+  color: white;
+}
+
+.add-task-btn:not([disabled]) {
+  background-color: #6B6B99 !important;
+  color: white;
 }
 
 /*END CENTER*/
