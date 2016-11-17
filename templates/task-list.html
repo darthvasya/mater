@@ -1,17 +1,31 @@
 <md-content>
 
-  <div layout="row" layout-align="center center" class="day">
+  <div layout="row" layout-align="center" class="day">
 
-      <div class="padded" md-whiteframe="3" flex="100" flex-gt-sm="60" layout="row" layout-align="center center">
-        <div>
-          <md-radio-group ng-model="data.group1">
-            <md-radio-button value="Apple" class="md-primary">|</md-radio-button>
-          </md-radio-group>
+      <div class="padded" md-whiteframe="3" flex="100" flex-gt-sm="60" layout="column" layout-align="center center">
+        <div class="one-task" layout="row" layout-align="center center">
+          <div flex="10" class="left-task">
+            <md-radio-group ng-model="data.group1">
+              <md-radio-button value="Apple" class="md-primary">|</md-radio-button>
+            </md-radio-group>
+          </div>
+          <div class="task-body right-task" flex="90">
+            <span class="md-body-2">My task</span>
+          </div>
         </div>
-        <div class="task">
-          <span class="md-body-2">My task</span>
+        <div class="one-task" layout="row" layout-align="center center">
+          <div flex="10" class="left-task">
+            <md-radio-group ng-model="data.group1">
+              <md-radio-button value="Apple" class="md-primary">|</md-radio-button>
+            </md-radio-group>
+          </div>
+          <div class="task-body right-task" flex="90">
+            <span class="md-body-2">My task</span>
+          </div>
         </div>
+
       </div>
+
   </div>
 
   <div layout="row" layout-align="center center" class="day">
