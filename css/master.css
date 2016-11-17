@@ -147,6 +147,14 @@ body {
   font-size: 25px;
 }
 
+md-autocomplete {
+  width: 100%;
+
+  border: none;
+  background-color: #F7F7F7;
+  box-shadow: none !important;
+}
+
 .center .empty-content .icons8-todo-list{
   color: #B1B1C8;
 
@@ -243,9 +251,9 @@ md-sidenav {
 }
 
 .sidenav-body  md-input-container {
+  width: 80%;
   margin-top: 0px;
   margin-bottom: 0px;
-  width: 80%;
   margin-left: 10%;
 }
 
@@ -370,6 +378,7 @@ md-sidenav {
   position: absolute;
   top: 10px;
   right: 0px;
+
   color: #51555E;
 }
 
