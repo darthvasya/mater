@@ -2,10 +2,22 @@
   <md-button class="md-icon-button">
     <span ng-click="close()" class="icons8-delete-2"></span>
   </md-button>
-  <span class="head-text md-subhead">This is my task!</span>
+  <span class="head-text md-subhead">This is my task!
+
+    <md-button class="md-icon-button edit-btn-task" aria-label="Settings">
+      <span class="icons8-edit"></span>
+    </md-button>
+    <md-button class="md-icon-button del-btn-task" aria-label="Settings">
+      <span class="icons8-delete"></span>
+    </md-button>
+
+  </span>
+
+
+
 </md-toolbar>
 <md-content layout-padding class="sidenav-body" >
-  <p>
+  <p class="task-text md-body-2">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
 </md-content>

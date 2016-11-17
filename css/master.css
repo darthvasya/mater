@@ -1,10 +1,16 @@
+body {
+  background-color: #F7F7F7;
+}
+
 /*LEFT BAR*/
 .left {
-  background-color: #292c33;
-  width: 325px;
   position: fixed;
   top: 0px;
   left: 0px;
+
+  width: 325px;
+
+  background-color: #292c33;
 }
 
 .offset-block {
@@ -15,22 +21,26 @@
   position: absolute;
   top: 20px;
   left: 40px;
+
   color: white;
 }
 
 .person img {
+  padding: 5px;
+
   border: 1px solid white;
   border-radius: 50% 50%;
-  padding: 5px;
 }
 
 .person .name {
   position: absolute;
   top: 20px;
   left: 75px;
+
   width: 150px;
-  font-weight: bolder;
+
   font-size: 14px;
+  font-weight: bolder;
 }
 
 .projects {
@@ -38,71 +48,99 @@
 }
 
 .projects-header {
-  background-color: #292c33;
-  color: white;
-  font-size: 12px;
   margin-left: 27px;
+
+  color: white;
+  background-color: #292c33;
+
+  font-size: 12px;
 }
 
 .addproj {
   position: absolute;
-  margin-left: 175px;
-  margin-top: -3px;
-  font-size: 18px;
+  top: -12px;
+  right: 10px;
+
+  cursor: pointer;
+
   color: white;
+  outline: none;
+
+  font-size: 18px;
   font-weight: bolder;
 }
 
 .projects md-content {
+  height: 500px;
+
   background-color: #292c33;
 }
 
-.projects md-list-item {
+.projects .list-element {
+  width: 259px;
+  height: 37px;
+  min-height: 27px;
+  margin-bottom: 1px;
   margin-left: 28px;
-  border-radius: 5px;
+  padding-left: 10px;
 
-  padding: 5px;
-  padding-left: 0px;
-  margin-bottom: 1px;
+  cursor: pointer;
+
+  color: white;
+  border-radius: 5px;
+  outline: none;
 
   font-size: 12px;
   font-weight: 100;
-  color: white;
-
-  width: 263px;
-  min-height: 27px;
-  height: 27px;
 }
 
-.projects md-list-item:not([disabled]):hover {
-  border-radius: 15px !important;
+.projects .list-element h3 {
+  position: absolute;
 
+  width: 73%;
+  margin-top: 10px;
+
+  white-space: normal;
 }
 
-.projects md-list-item:not([disabled]) {
-  border-radius: 5px !important;
+.projects .list-element:hover {
+  background-color: rgba(227, 227, 277, 0.5);
 }
 
 .projects .active {
     background-color: #6B6B99;
 }
 
-.projects md-list-item h3 .count {
+.projects  .count {
   position: absolute;
-  right: 10px;
+  right:  0px;
 }
+
+.logout {
+  position: fixed;
+  bottom: 5px;
+  left: 30px;
+
+  cursor: pointer;
+
+  color: white;
+  outline: none;
+
+  font-size: 14px;
+}
+
 /*END LEFT BAR*/
 
 /* CENTER*/
 .center md-toolbar {
+  height: 50px;
   min-height: 50px;
-  height: 50px;
 
 }
 .md-toolbar-tools {
-  background-color: #F7F7F7;
   color: #B1B1C8;
-  border-bottom: 1px solid #BDBDBD;
+  border-bottom: 1px solid #BDBDBD;
+  background-color: #F7F7F7;
 }
 
 .center md-toolbar .icons8-search,  .center md-toolbar .icons8-more {
@@ -111,20 +149,25 @@
 
 .center .empty-content .icons8-todo-list{
   color: #B1B1C8;
+
   font-size: 200px;
 }
 .center md-content .empty-content {
+  height: 613px;
   min-height: 613px;
-  height: 613px;
+
   background-color: #F7F7F7;
 }
 
 .center md-content .empty-content p {
-  color: #B1B1C8;
-  font-size: 24px;
   position: absolute;
   top: 66%;
+
   text-align: center;
+
+  color: #B1B1C8;
+
+  font-size: 24px;
 }
 
 .center md-content .empty-content i {
@@ -134,20 +177,22 @@
 
 .center md-content .add-task-btn {
   position: fixed;
-  bottom: 15px;
   right: 15px;
+  bottom: 15px;
+
   background-color: #6B6B99;
+
   font-size: 25px;
 }
 
 .add-task-btn:not([disabled]):hover {
+  color: white;
   background-color: #6B6B99 !important;
-  color: white;
 }
 
 .add-task-btn:not([disabled]) {
+  color: white;
   background-color: #6B6B99 !important;
-  color: white;
 }
 
 /*END CENTER*/
@@ -155,6 +200,8 @@
 
 /*RIGHT SIDENAV COMMON*/
 md-sidenav {
+  width: 100%;
+
   background-color: #292C33;
 }
 
@@ -166,17 +213,21 @@ md-sidenav {
 }
 
 .icons8-delete-2::after {
-  content: "ESC";
   position: absolute;
   top: 20px;
   left: 10px;
+
+  content: "ESC";
+
   font-size: 10px;
 }
 
 .head-text {
-  text-align: center;
-  font-size: 14px;
   margin-top: -24px;
+
+  text-align: center;
+
+  font-size: 14px;
 }
 
 .sidenav-body label, .sidenav-body input, .sidenav-body md-button{
@@ -195,26 +246,31 @@ md-sidenav {
 
 /*TASKS*/
 .padded{
+  margin-top: 35px;
+
   border-radius: 10px;
   background-color: white;
-  margin-top: 35px;
 }
 
 .padded md-radio-button {
   width: 20px;
-  margin-left: 30px;
   margin-top: 20px;
-  border-color: #EAEAEA;
+  margin-left: 30px;
+
   color: #EAEAEA;
+  border-color: #EAEAEA;
 }
 
 .padded md-radio-button::after {
-  content: '';
   position: absolute;
   top: -9px;
   left: 50px;
+
   width: 1px;
   height: 35px;
+
+  content: '';
+
   background-color: #EAEAEA;
 }
 
@@ -224,16 +280,20 @@ md-sidenav {
 }
 
 .one-task::after {
-  content: '';
   position: absolute;
-  margin-top: 30px;
+
   width: 50%;
   height: 1px;
+  margin-top: 30px;
+
+  content: '';
+
   background-color: #EAEAEA;
 }
 .one-task:last-child::after {
-  content: '';
   width: 0px;
+
+  content: '';
 }
 
 .one-task:last-child {
@@ -248,15 +308,18 @@ md-sidenav {
 .day {
   position: absolute;
   left: 210px;
+
   margin-top: 10px;
-  font-weight: 600;
+
   color:  #B3BBCB;
+
   font-size: 13px;
+  font-weight: 600;
 }
 
 .task-list-body {
+  outline: none;
   background-color: #F7F7F7;
-  outline: none;
 }
 
 .task-body {
@@ -266,6 +329,7 @@ md-sidenav {
 
 .task-body:not([disabled]):hover {
   cursor: pointer;
+
   color : black;
   background-color: white;
 }
@@ -275,13 +339,33 @@ md-sidenav {
   background-color: white;
 }
 
-
-
-
-
-
-
-body {
-  background-color: #F7F7F7;
-}
 /*END TASKS*/
+
+/* SIDENAV CUSTOM*/
+
+/*read task*/
+.task-text {
+  padding: 0px 50px;
+
+  color: white;
+
+  font-size: 12px;
+  line-height: 1.4em;
+}
+
+.edit-btn-task, .del-btn-task {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  color: #51555E;
+}
+
+.edit-btn-task {
+  right: 35px;
+}
+/*end read task*/
+
+/**/
+/**/
+
+/*END SIDENAV CUSTOM*/

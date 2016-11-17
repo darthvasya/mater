@@ -66,4 +66,6 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
         $log.debug("close RIGHT is done");
       });
   };
+
+
 });

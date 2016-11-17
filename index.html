@@ -17,35 +17,9 @@
 
 
     <div layout="row" layout-xs="row">
+
       <div class="left" id="left">
-        <div class="person">
-          <img src="images/man.svg" width="45" alt="" />
-          <span class="name">Trevor Reyes</span>
-        </div>
-
-        <div class="projects">
-          <md-content>
-            <md-subheader class="md-no-sticky projects-header md-subhead">
-              Projects
-              <!-- <md-button class="md-icon-button"> -->
-                <span class="icons8-plus addproj" ng-click="toggleSidenav('add-project')"></span>
-              <!-- </md-button> -->
-            </md-subheader>
-             <md-list-item class="active" ng-click="null" >
-               <h3>Private<span class="count">8</span></h3>
-             </md-list-item>
-             <md-list-item ng-click="null">
-               <h3>Decode<span class="count">25</span></h3>
-             </md-list-item>
-             <md-list-item ng-click="null">
-               <h3>Family<span class="count">13</span></h3>
-             </md-list-item>
-             <md-list-item ng-click="null">
-               <h3>Cookie<span class="count">9</span></h3>
-             </md-list-item>
-          </md-content>
-
-        </div>
+        <ng-include src="'templates/left-bar.html'"></ng-include>
       </div>
 
       <div class="offset-block">
@@ -57,23 +31,32 @@
               <md-button class="md-icon-button" aria-label="Settings">
                 <span class="icons8-search"></span>
               </md-button>
+
               <h2>
                 <span></span>
               </h2>
               <span flex></span>
-              <md-button class="md-icon-button">
-                <span class="icons8-more"></span>
-              </md-button>
+
+              <div layout="column" flex="33" flex-sm="100" flex-xs="100" layout-align="center center">
+                <md-menu md-offset="0 -7">
+                  <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <span class="icons8-more"></span>
+                  </md-button>
+                  <md-menu-content width="2">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
             </div>
           </md-toolbar>
 
-          <!--  -->
           <ng-include src="'templates/task-list.html'"></ng-include>
 
 
 
         <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-          <!-- <ng-include ng-src="{{sidenav_type_url}}"></ng-include> -->
           <ng-view></ng-view>
         </md-sidenav>
 
@@ -104,5 +87,6 @@
 
     <script src="app.js" charset="utf-8"></script>
     <script src="Controllers/appController.js" charset="utf-8"></script>
+    <script src="Controllers/autocompleteController.js" charset="utf-8"></script>
   </body>
 </html>
