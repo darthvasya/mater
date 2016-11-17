@@ -241,6 +241,19 @@ md-sidenav {
 .sidenav-body input:focus {
   border-color: white !important;
 }
+
+.sidenav-body  md-input-container {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.add-task-btn-ok .icons8-checkmark{
+  position: absolute;
+  top: 0px;
+  left: 15px;
+}
 /*END RIGHT SIDENAW COMMON*/
 
 
@@ -365,7 +378,8 @@ md-sidenav {
 }
 /*end read task*/
 
-/**/
-/**/
+/*create task*/
+
+/*end create task*/
 
 /*END SIDENAV CUSTOM*/

@@ -4,6 +4,11 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
 
   $scope.toggleRight = buildToggler('right');
 
+  $scope.selectMe = function (event){
+      let obj = event.target;
+      obj.className += " active";
+  }
+
   $scope.toggleSidenav = function(type) {
     switch (type) {
       case 'add-project':

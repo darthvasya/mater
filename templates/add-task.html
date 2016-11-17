@@ -5,10 +5,18 @@
   <span class="head-text md-subhead">Create New Task</span>
 </md-toolbar>
 <md-content layout-padding class="sidenav-body" >
-  <form>
+  <form class="createTaskForm">
     <md-input-container>
-      <label for="testInput">Test input</label>
-      <input type="text" id="testInput" md-autofocus>
+      <label for="testInput">Task name</label>
+      <input type="text" id="taskName" md-autofocus>
+    </md-input-container>
+    <md-input-container>
+      <label for="descriptionTask">Description</label>
+      <input type="text" id="descriptionTask">
     </md-input-container>
   </form>
+  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="close()" class="md-accent">
+    <span class="icons8-checkmark"></span>
+  </md-button>
+
 </md-content>
