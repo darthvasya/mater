@@ -188,30 +188,68 @@ md-sidenav {
 
 
 /*TASKS*/
-.day .padded{
+.padded{
   border-radius: 10px;
   background-color: white;
-  margin: 10px;
-
-
+  margin-top: 35px;
 }
 
 .padded md-radio-button {
   width: 20px;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 30px;
+  margin-top: 20px;
+  border-color: #EAEAEA;
+  color: #EAEAEA;
+}
+
+.padded md-radio-button::after {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50px;
+  width: 1px;
+  height: 35px;
+  background-color: #EAEAEA;
 }
 
 .one-task {
   width: 100%;
+  height: 60px;
 }
- 
 
-.one-task {
-  border-bottom: 1px solid black;
+.one-task::after {
+  content: '';
+  position: absolute;
+  margin-top: 30px;
+  width: 50%;
+  height: 1px;
+  background-color: #EAEAEA;
+}
+.one-task:last-child::after {
+  content: '';
+  width: 0px;
 }
 
 .one-task:last-child {
   border-bottom: none;
+}
+
+.task-body p{
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+.day {
+  position: absolute;
+  left: 210px;
+  margin-top: 10px;
+  font-weight: 600;
+  color:  #B3BBCB;
+  font-size: 13px;
+}
+
+.task-list-body {
+  background-color: #F7F7F7;
+  height: 100%;
 }
 /*END TASKS*/
