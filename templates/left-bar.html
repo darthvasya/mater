@@ -12,18 +12,10 @@
             <span class="icons8-plus "></span>
           </md-button>
       </md-subheader>
-       <div ng-click="selectMe($event)" class="list-element">
-         <h3>Cookie<span class="count">9</span></h3>
+       <div ng-repeat="task in tasks" ng-click="select($index)" ng-class="{active: $index == selected}" class="list-element">
+         <h3><span ng-bind="task.name"></span><span class="count" ng-bind="task.count"></span></h3>
        </div>
-       <div ng-click="null" class="list-element active">
-         <h3>Cookie<span class="count">9</span></h3>
-       </div>
-       <div ng-click="null" class="list-element">
-         <h3>Super long long prelong<span class="count">39</span></h3>
-       </div>
-       <div ng-click="null" class="list-element">
-         <h3>Cookie<span class="count">912</span></h3>
-       </div>
+
 
        <h5 class="md-title logout">Log out</h5>
     </md-content>

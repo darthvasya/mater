@@ -4,10 +4,31 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
 
   $scope.toggleRight = buildToggler('right');
 
-  $scope.selectMe = function (event){
-      let obj = event.target;
-      obj.className += " active";
-  }
+  var tasks = [
+              {
+                  'name': 'Task name',
+                  'count': 89,
+              },
+              {
+                  'name': 'Task name dsfa',
+                  'count': 9,
+              },
+              {
+                  'name': 'Task name asdf',
+                  'count': 0,
+              },
+              {
+                  'name': 'Task nasadme',
+                  'count': 13,
+              },
+            ];
+
+  $scope.tasks = tasks;
+  $scope.selected = 0;
+
+  $scope.select= function(index) {
+     $scope.selected = index;
+  };
 
   $scope.toggleSidenav = function(type) {
     switch (type) {
