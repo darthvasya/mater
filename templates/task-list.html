@@ -1,75 +1,37 @@
-<md-content class="task-list-body">
-
-  <div layout="row" layout-align="center">
-      <h6 class="day md-subhead">Today</h6>
-      <div class="padded" md-whiteframe="3" flex="100" flex-gt-sm="60" layout="column" layout-align="center center">
-        <div class="one-task" layout="row" layout-align="center center">
-          <div flex="20">
-            <md-radio-group ng-model="data.group1">
-              <md-radio-button value="Apple" class="md-primary"></md-radio-button>
-            </md-radio-group>
-          </div>
-          <div class="task-body" flex="80">
-            <p class="md-title">My taskasdfadsfsadd dsafsad fsad fasd </p>
-          </div>
-        </div>
 
 
-      </div>
+<div class="">
+  <md-content class="task-list-body" id="taskbody">
 
-  </div>
-  <div layout="row" layout-align="center">
-      <h6 class="day md-subhead">Today</h6>
-      <div class="padded" md-whiteframe="3" flex="100" flex-gt-sm="60" layout="column" layout-align="center center">
-        <div class="one-task" layout="row" layout-align="center center">
-          <div flex="20">
-            <md-radio-group ng-model="data.group1">
-              <md-radio-button value="Apple" class="md-primary"></md-radio-button>
-            </md-radio-group>
-          </div>
-          <div class="task-body" flex="80">
-            <p class="md-title">My taskasdfadsfsadd dsafsad fsad fasd </p>
+    <!-- One day -->
+    <div layout="row" layout-align="center">
+        <h6 class="day md-subhead">Today</h6>
+        <div class="padded" md-whiteframe="3" flex="100" flex-gt-sm="60" layout="column" layout-align="center center">
+          <div class="one-task" layout="row" layout-align="center center">
+            <div flex="20">
+              <md-radio-group ng-model="data.group1">
+                <md-radio-button value="Apple" class="md-primary"></md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="task-body" flex="80" ng-click="toggleSidenav('open-task')" style="animation: none; transition: none;">
+              <p class="md-title">My taskasdfadsfsadd dsafsad fsad fasd </p>
+            </div>
           </div>
         </div>
-
-
-      </div>
-
-  </div>
-  <div layout="row" layout-align="center">
-      <h6 class="day md-subhead">Today</h6>
-      <div class="padded" md-whiteframe="3" flex="100" flex-gt-sm="60" layout="column" layout-align="center center">
-        <div class="one-task" layout="row" layout-align="center center">
-          <div flex="20">
-            <md-radio-group ng-model="data.group1">
-              <md-radio-button value="Apple" class="md-primary"></md-radio-button>
-            </md-radio-group>
-          </div>
-          <div class="task-body" flex="80">
-            <p class="md-title">My taskasdfadsfsadd dsafsad fsad fasd </p>
-          </div>
-        </div>
-        <div class="one-task" layout="row" layout-align="center center">
-          <div flex="20">
-            <md-radio-group ng-model="data.group1">
-              <md-radio-button value="Apple" class="md-primary"></md-radio-button>
-            </md-radio-group>
-          </div>
-          <div class="task-body" flex="80">
-            <p class="md-title">My taskasdfadsfsadd dsafsad fsad fasd </p>
-          </div>
-        </div>
-
-      </div>
-
-  </div>
+    </div>
+    <!-- End one day -->
 
 
 
+    <!--  -->
+    <br>
+    <br>
+
+    <md-button class="md-fab add-task-btn"  ng-click="toggleSidenav('add-task')" class="md-accent">
+      <span class="icons8-plus"></span>
+    </md-button>
 
 
-  <md-button class="md-fab add-task-btn"  ng-click="toggleSidenav('add-task')" class="md-accent">
-    <span class="icons8-plus"></span>
-  </md-button>
+  </md-content>
 
-</md-content>
+</div>

@@ -10,4 +10,9 @@ var app = angular.module('myApp', ['ngMaterial', 'ngRoute'])
         templateUrl:'templates/add-task.html',
         controller:'appController'
     });
+    $routeProvider.when('/open-task',
+    {
+        templateUrl:'templates/open-task.html',
+        controller:'appController'
+    });
 });

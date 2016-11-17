@@ -12,6 +12,9 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
       case 'add-task':
        $location.path("add-task")
         break;
+      case 'open-task':
+       $location.path("open-task")
+        break;
     }
     $scope.toggleRight();
   }

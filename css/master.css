@@ -1,7 +1,13 @@
 /*LEFT BAR*/
 .left {
   background-color: #292c33;
-  height: 663px;
+  width: 325px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.offset-block {
   width: 325px;
 }
 
@@ -127,7 +133,7 @@
 }
 
 .center md-content .add-task-btn {
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   right: 15px;
   background-color: #6B6B99;
@@ -250,6 +256,32 @@ md-sidenav {
 
 .task-list-body {
   background-color: #F7F7F7;
-  height: 100%;
+  outline: none;
+}
+
+.task-body {
+  color : black;
+  outline: none;
+}
+
+.task-body:not([disabled]):hover {
+  cursor: pointer;
+  color : black;
+  background-color: white;
+}
+
+.task-body:not([disabled]) {
+  color : black;
+  background-color: white;
+}
+
+
+
+
+
+
+
+body {
+  background-color: #F7F7F7;
 }
 /*END TASKS*/

@@ -16,16 +16,14 @@
   <body ng-cloak layout="column" ng-controller="appController" >
 
 
-    <div layout="row" layout-xs="column">
-      <div class="left">
-
+    <div layout="row" layout-xs="row">
+      <div class="left" id="left">
         <div class="person">
           <img src="images/man.svg" width="45" alt="" />
           <span class="name">Trevor Reyes</span>
         </div>
 
         <div class="projects">
-
           <md-content>
             <md-subheader class="md-no-sticky projects-header md-subhead">
               Projects
@@ -48,9 +46,11 @@
           </md-content>
 
         </div>
-
       </div>
 
+      <div class="offset-block">
+
+      </div>
       <div flex="auto" class="center" ng-controller="appController">
           <md-toolbar class="md-hue-2">
             <div class="md-toolbar-tools">
@@ -82,6 +82,18 @@
       </div>
 
     </div>
+
+    <!-- help scrpts  -->
+    <script type="text/javascript">
+      window.onload = function () {
+        var windowHeight = window.innerHeight;
+
+        document.getElementById('left').style.minHeight = windowHeight + 'px';
+
+        //document.getElementById('task-list-body').style.height = windowHeight + 'px';
+      }
+    </script>
+    <!--  -->
 
     <!--  -->
     <script src="node_modules/angular/angular.js" charset="utf-8"></script>
