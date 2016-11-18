@@ -61,8 +61,11 @@
                     <span class="icons8-more"></span>
                   </md-button>
                   <md-menu-content width="2">
-                    <md-menu-item ng-repeat="item in [1, 2, 3]">
-                      <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                    <md-menu-item >
+                      <md-button ng-click="showPrompt($event)"> <span md-menu-align-target>Редактировать</span></md-button>
+                    </md-menu-item>
+                    <md-menu-item >
+                      <md-button ng-click="deleteProject()"> <span md-menu-align-target>Удалить</span></md-button>
                     </md-menu-item>
                   </md-menu-content>
                 </md-menu>
@@ -70,8 +73,9 @@
             </div>
           </md-toolbar>
 
-          <ng-include src="'templates/task-list.html'"></ng-include>
 
+          <ng-include ng-if="haveTasks" src="'templates/task-list.html'"></ng-include>
+          <ng-include ng-if="!haveTasks" src="'templates/no-tasks.html'"></ng-include>
 
 
         <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">

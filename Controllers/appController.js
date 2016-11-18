@@ -1,4 +1,4 @@
-app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $location, $routeParams, dataService) {
+app.controller('appController', function($scope, $timeout, $mdDialog, $mdSidenav, $log, $location, $routeParams, dataService) {
   $scope.sidenav_type_url = "templates/";
 
   $scope.toggleRight = buildToggler('right');
@@ -8,6 +8,7 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
   $scope.currentProjectObject = {};
   $scope.selectedTaskObject = {};
   $scope.selectedTask = 0;
+  $scope.haveTasks = true;
 
   $scope.select= function(index, id) {
       $location.path("projects/" + id);
@@ -26,6 +27,10 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
           if(value.id == id) {
             $scope.currentProjectObject = value;
             console.log(value);
+            angular.forEach(value.days, function (v, k) {
+              if(!v.tasks.length !== 0)
+                  $scope.haveTasks = true;
+            })
           }
         });
       }
@@ -44,7 +49,33 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
       console.log(newProject);
       $scope.projects.push(newProject);
       $scope.close();
+      $location.path("projects/" + newProject.id);
     }
+  }
+
+  $scope.deleteProject = function () {
+    angular.forEach($scope.projects, function(value, key) {
+      if (value.id == $scope.currentProjectObject.id) {
+        $scope.projects.splice(key, 1);
+        $scope.currentProjectObject = $scope.projects[0];
+        console.log($scope.currentProjectObject);
+        if($scope.currentProjectObject !== undefined) {
+            $location.path("projects/" + $scope.currentProjectObject.id);
+        } else {
+            $scope.haveTasks = false;
+        }
+
+      }
+    });
+  }
+
+  $scope.editProject = function (name) {
+    console.log(name);
+    angular.forEach($scope.projects, function(value, key) {
+      if (value.id == $scope.currentProjectObject.id) {
+        value.name = name;
+      }
+    });
   }
 
   $scope.createNewTask = function (taskName, taskDesc) {
@@ -80,19 +111,37 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
         $scope.currentProjectObject.taskCount += 1;
         console.log($scope.currentProjectObject);
       }
-
+      if ($scope.currentProjectObject.days.length !== 0) {
+        $scope.haveTasks = true;
+      }
     }
   }
 
   $scope.deleteTask = function (task_id) {
-    console.log("DAlete" + task_id);
+    let taskDay;
     angular.forEach($scope.currentProjectObject.days, function (value, key) {
       angular.forEach(value.tasks, function (val, ke) {
         if (val.id_task == task_id) {
           value.tasks.splice(ke, 1);
+          taskDay = value.date;
+          $scope.currentProjectObject.taskCount -= 1;
+        }
+        if (value.tasks.length == 0) {
+          console.log(taskDay);
+          angular.forEach($scope.currentProjectObject.days, function (v, k) {
+            if(v.date == taskDay) {
+              $scope.currentProjectObject.days.splice(k, 1);
+            }
+          });
         }
       });
     });
+
+    if ($scope.currentProjectObject.days.length == 0) {
+      $scope.haveTasks = false;
+    }
+
+    $scope.close();
   }
 
   function getCurrentDate() {
@@ -125,33 +174,36 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
   }
 
   $scope.toggleSidenav = function(type, date, task_id) {
-    $scope.selectedTask = task_id;
-    console.log(date);
+    if(date !== undefined) {
+      $scope.selectedTask = task_id;
+      console.log(date);
 
-    //ищем выбраный нами тас
-    //проходим по дням текущего проекта
-    angular.forEach($scope.currentProjectObject.days, function (value, key) {
-      if(date == value.date) {
-        //далее по таском в нужом дне, получаем объект при совпадении
-        angular.forEach(value.tasks, function(val, ke) {
-          if(val.id_task == task_id) {
-            $scope.selectedTaskObject = val;
-            console.log($scope.selectedTaskObject.task_name);
-          }
-        });
-      }
-    });
+      //ищем выбраный нами тасk
+      //проходим по дням текущего проекта
+      angular.forEach($scope.currentProjectObject.days, function (value, key) {
+        if(date == value.date) {
+          //далее по таском в нужом дне, получаем объект при совпадении
+          angular.forEach(value.tasks, function(val, ke) {
+            if(val.id_task == task_id) {
+              $scope.selectedTaskObject = val;
+              console.log($scope.selectedTaskObject.task_name);
+            }
+          });
+        }
+      });
+    }
+
 
     switch (type) {
       case 'add-project':
-       $location.path("add-project");
+       $location.path("/projects/" + $scope.currentProjectId + "/add-project");
         break;
       case 'add-task':
-       $location.path("add-task");
+       $location.path("/projects/" + $scope.currentProjectId + "/add-task");
         break;
       case 'open-task':
       {
-        $location.path("open-task");
+        $location.path("/projects/" + $scope.currentProjectId + "/" + $scope.selectedTaskObject.id_task );
         console.log($scope.selectedTaskObject.task_name);
       }
         break;
@@ -207,5 +259,25 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
       });
   };
 
+  $scope.status = '  ';
+  $scope.customFullscreen = false;
+  $scope.showPrompt = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.prompt()
+      .title('Edit yout project')
+      .textContent('Write a new name')
+      .placeholder('Project name')
+      .ariaLabel('Project name')
+      .initialValue('')
+      .targetEvent(ev)
+      .ok('Okay!')
+      .cancel('No, thanks!');
+
+    $mdDialog.show(confirm).then(function(result) {
+      $scope.editProject(result)
+    }, function() {
+      //no
+    });
+  };
 
 });

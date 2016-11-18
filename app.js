@@ -1,14 +1,14 @@
 var app = angular.module('myApp', ['ngMaterial', 'ngRoute'])
 .config(function($routeProvider){
-    $routeProvider.when('/add-project',
+    $routeProvider.when('/projects/:id/add-project',
     {
         templateUrl:'templates/add-project.html'
     });
-    $routeProvider.when('/add-task',
+    $routeProvider.when('/projects/:id/add-task',
     {
         templateUrl:'templates/add-task.html'
     });
-    $routeProvider.when('/open-task',
+    $routeProvider.when('/projects/:id/:task_id',
     {
         templateUrl:'templates/open-task.html'
     });
@@ -17,4 +17,5 @@ var app = angular.module('myApp', ['ngMaterial', 'ngRoute'])
         templateUrl:'templates/task-list.html',
         controller:'appController'
     });
+ 
 });
