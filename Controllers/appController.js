@@ -1,5 +1,4 @@
 app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $location, $routeParams, dataService) {
-
   $scope.sidenav_type_url = "templates/";
 
   $scope.toggleRight = buildToggler('right');
@@ -35,7 +34,7 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
   $scope.toggleSidenav = function(type, date, task_id) {
     $scope.selectedTask = task_id;
     console.log(date);
-    
+
     //ищем выбраный нами тас
     //проходим по дням текущего проекта
     angular.forEach($scope.currentProjectObject.days, function (value, key) {
@@ -44,6 +43,7 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
         angular.forEach(value.tasks, function(val, ke) {
           if(val.id_task == task_id) {
             $scope.selectedTaskObject = val;
+            console.log($scope.selectedTaskObject.task_name);
           }
         });
       }
@@ -51,13 +51,16 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
 
     switch (type) {
       case 'add-project':
-       $location.path("add-project")
+       $location.path("add-project");
         break;
       case 'add-task':
-       $location.path("add-task")
+       $location.path("add-task");
         break;
       case 'open-task':
-       $location.path("open-task")
+      {
+        $location.path("open-task");
+        console.log($scope.selectedTaskObject.task_name);
+      }
         break;
     }
     $scope.toggleRight();
