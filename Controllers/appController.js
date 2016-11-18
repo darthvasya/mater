@@ -18,7 +18,7 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
   $scope.$on("$routeChangeSuccess", function () {
       var id = $routeParams["id"];
 
-      if(id!=='undefined'){
+      if(id!==undefined){
         console.log("Project id: " + id);
         $scope.currentProjectId = id;
 
@@ -30,6 +30,88 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
         });
       }
   });
+
+
+
+  $scope.createNewProject = function (projectName) {
+    if (projectName !== undefined) {
+      let newProject = {
+              id: makeid(),
+              name: projectName,
+              taskCount: 0,
+              days:[]
+      }
+      console.log(newProject);
+      $scope.projects.push(newProject);
+      $scope.close();
+    }
+  }
+
+  $scope.createNewTask = function (taskName, taskDesc) {
+    console.log(123);
+    if (taskName !== undefined && taskDesc !== undefined) {
+      let projectId = 0;
+      let day_date = '';
+
+      let task = {
+        id_task: makeid(),
+        task_name: taskName,
+        description: taskDesc
+      };
+
+      console.log(task);
+      console.log($scope.currentProjectObject);
+      if ($scope.currentProjectObject.days.length !== 0) {
+        angular.forEach($scope.currentProjectObject.days, function (val, ke) {
+          console.log(val.date);
+          if(val.date == getCurrentDate()) {
+            day_date = val.date;
+            val.tasks.push(task);
+            console.log(val);
+            $scope.currentProjectObject.taskCount += 1;
+          }
+        });
+      } else {
+        let day ={
+          date: getCurrentDate(),
+          tasks: [task]
+        };
+        $scope.currentProjectObject.days.push(day);
+        $scope.currentProjectObject.taskCount += 1;
+        console.log($scope.currentProjectObject);
+      }
+
+    }
+  }
+
+  function getCurrentDate() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd
+    }
+
+    if(mm<10) {
+        mm='0'+mm
+    }
+
+    today = dd+'.'+mm + '.' + yyyy;
+    return today;
+  }
+
+  function makeid()
+  {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for( var i=0; i < 15; i++ )
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      return text;
+  }
 
   $scope.toggleSidenav = function(type, date, task_id) {
     $scope.selectedTask = task_id;

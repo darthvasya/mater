@@ -45,7 +45,7 @@ app.factory('dataService', function () {
           }]
         },
         {
-          date: "18.11.2016",
+          date: "19.11.2016",
           tasks:
           [{
             id_task: 5,

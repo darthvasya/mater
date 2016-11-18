@@ -4,14 +4,14 @@
   </md-button>
   <span class="head-text md-subhead">Create new project</span>
 </md-toolbar>
-<md-content layout-padding class="sidenav-body" >
+<md-content layout-padding class="sidenav-body" ng-init="projectName">
   <form>
     <md-input-container>
-      <label for="testInput">Project name</label>
-      <input type="text" id="testInput" md-autofocus>
+      <label for="projectName">Project name</label>
+      <input type="text" id="projectName" md-autofocus ng-model="projectName">
     </md-input-container>
   </form>
-  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="close()" class="md-accent">
+  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="createNewProject(projectName)" class="md-accent">
     <span class="icons8-checkmark"></span>
   </md-button>
 </md-content>

@@ -8,14 +8,14 @@
   <form class="createTaskForm">
     <md-input-container>
       <label for="testInput">Task name</label>
-      <input type="text" id="taskName" md-autofocus>
+      <input type="text" id="taskName" md-autofocus ng-model="taskName">
     </md-input-container>
     <md-input-container>
       <label for="descriptionTask">Description</label>
-      <input type="text" id="descriptionTask">
+      <input type="text" id="descriptionTask" ng-model="taskDesc">
     </md-input-container>
   </form>
-  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="close()" class="md-accent">
+  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="createNewTask(taskName, taskDesc)" class="md-accent">
     <span class="icons8-checkmark"></span>
   </md-button>
 
