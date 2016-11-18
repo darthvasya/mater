@@ -84,6 +84,17 @@ app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $lo
     }
   }
 
+  $scope.deleteTask = function (task_id) {
+    console.log("DAlete" + task_id);
+    angular.forEach($scope.currentProjectObject.days, function (value, key) {
+      angular.forEach(value.tasks, function (val, ke) {
+        if (val.id_task == task_id) {
+          value.tasks.splice(ke, 1);
+        }
+      });
+    });
+  }
+
   function getCurrentDate() {
     var today = new Date();
     var dd = today.getDate();

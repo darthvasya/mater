@@ -10,7 +10,7 @@
           <div class="one-task" layout="row" layout-align="center center" ng-repeat="task in day.tasks">
             <div flex="20">
               <md-radio-group ng-model="data.group1">
-                <md-radio-button value="Apple" class="md-primary"></md-radio-button>
+                <md-radio-button value="1" class="md-primary" ng-click="deleteTask(task.id_task)"></md-radio-button>
               </md-radio-group>
             </div>
             <div class="task-body" flex="80" ng-click="toggleSidenav('open-task', day.date, task.id_task)" style="animation: none; transition: none;">
