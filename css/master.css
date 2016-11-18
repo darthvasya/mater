@@ -117,8 +117,8 @@ body {
 }
 
 .logout {
-  position: fixed;
-  bottom: 5px;
+  position: absolute;
+  bottom: 0px;
   left: 30px;
 
   cursor: pointer;
@@ -133,10 +133,17 @@ body {
 
 /* CENTER*/
 .center md-toolbar {
-  height: 50px;
-  min-height: 50px;
+  position: fixed;
+  height: 50px;  min-height: 50px;
 
 }
+
+.dots {
+  position: fixed;
+  top: 5px;
+  right: 10px;
+}
+
 .md-toolbar-tools {
   color: #B1B1C8;
   border-bottom: 1px solid #BDBDBD;
@@ -153,6 +160,10 @@ md-autocomplete {
   border: none;
   background-color: #F7F7F7;
   box-shadow: none !important;
+}
+
+.center md-autocomplete{
+  width: 60%;
 }
 
 .center .empty-content .icons8-todo-list{
@@ -203,6 +214,9 @@ md-autocomplete {
   background-color: #6B6B99 !important;
 }
 
+md-radio-button {
+  outline: none;
+}
 /*END CENTER*/
 
 
@@ -216,6 +230,11 @@ md-sidenav {
 .sidenav-toolbar, .sidenav-body {
   background-color: #292C33 !important;
 }
+
+.sidenav-body  {
+  margin-top: 50px;
+}
+
 .icons8-delete-2 {
     font-size: 21px;
 }
@@ -339,7 +358,7 @@ md-sidenav {
 }
 
 .task-list-body {
-  outline: none;
+  outline: none;  margin-top: 50px;
   background-color: #F7F7F7;
 }
 

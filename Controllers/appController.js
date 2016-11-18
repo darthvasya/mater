@@ -33,10 +33,16 @@ app.controller('appController', function($scope, $timeout, $mdDialog, $mdSidenav
             })
           }
         });
+        if($scope.currentProjectObject.days.length == 0)
+          $scope.haveTasks = false;
       }
   });
 
-
+  $scope.setAutocompleteFocus = function () {
+    setTimeout(function(){
+      document.querySelector('#autoCompleteId').focus();
+    },0);
+  }
 
   $scope.createNewProject = function (projectName) {
     if (projectName !== undefined) {
@@ -78,7 +84,12 @@ app.controller('appController', function($scope, $timeout, $mdDialog, $mdSidenav
     });
   }
 
+  $scope.test = function () {
+    console.log("QWR");
+  }
+
   $scope.createNewTask = function (taskName, taskDesc) {
+    console.log("NEWWWWW : " + $scope.taskName);
     console.log(123);
     if (taskName !== undefined && taskDesc !== undefined) {
       let projectId = 0;
@@ -114,6 +125,8 @@ app.controller('appController', function($scope, $timeout, $mdDialog, $mdSidenav
       if ($scope.currentProjectObject.days.length !== 0) {
         $scope.haveTasks = true;
       }
+      console.log($scope.newTask);
+      $scope.close();
     }
   }
 

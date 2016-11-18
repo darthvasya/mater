@@ -11,7 +11,7 @@
       <input type="text" id="projectName" md-autofocus ng-model="projectName">
     </md-input-container>
   </form>
-  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="createNewProject(projectName)" class="md-accent">
+  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="createNewProject(projectName); projectName = null;" class="md-accent">
     <span class="icons8-checkmark"></span>
   </md-button>
 </md-content>

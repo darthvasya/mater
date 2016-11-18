@@ -28,7 +28,7 @@
       <div flex="auto" class="center">
           <md-toolbar class="md-hue-2" ng-controller="searchController">
             <div class="md-toolbar-tools">
-              <md-button class="md-icon-button" aria-label="Settings">
+              <md-button class="md-icon-button" aria-label="Settings" ng-click="setAutocompleteFocus()">
                 <span class="icons8-search"></span>
               </md-button>
               <md-autocomplete
@@ -41,8 +41,9 @@
                   md-items="item in querySearch(searchText)"
                   md-item-text="item.display"
                   md-min-length="0"
-                  placeholder="">
-                <md-item-template>
+                  placeholder=""
+                  md-input-id="autoCompleteId">
+                <md-item-template >
                   <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
                 </md-item-template>
                 <md-not-found>
@@ -55,7 +56,7 @@
               </h2>
               <span flex></span>
 
-              <div layout="column" flex="33" flex-sm="100" flex-xs="100" layout-align="center center">
+              <div class="dots" layout="column" layout-align="center center">
                 <md-menu md-offset="0 -7">
                   <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
                     <span class="icons8-more"></span>

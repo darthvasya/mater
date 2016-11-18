@@ -4,7 +4,7 @@
   </md-button>
   <span class="head-text md-subhead">Create New Task</span>
 </md-toolbar>
-<md-content layout-padding class="sidenav-body" >
+<md-content layout-padding class="sidenav-body">
   <form class="createTaskForm">
     <md-input-container>
       <label for="testInput">Task name</label>
@@ -15,7 +15,7 @@
       <input type="text" id="descriptionTask" ng-model="taskDesc">
     </md-input-container>
   </form>
-  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="createNewTask(taskName, taskDesc)" class="md-accent">
+  <md-button class="md-fab add-task-btn add-task-btn-ok"  ng-click="createNewTask(taskName, taskDesc); taskName = null; taskDesc = null;" class="md-accent">
     <span class="icons8-checkmark"></span>
   </md-button>
 
