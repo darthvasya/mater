@@ -1,36 +1,54 @@
-app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $location) {
+app.controller('appController', function($scope, $timeout, $mdSidenav, $log, $location, $routeParams, dataService) {
 
   $scope.sidenav_type_url = "templates/";
 
   $scope.toggleRight = buildToggler('right');
-
-  var tasks = [
-              {
-                  'name': 'Task name',
-                  'count': 89,
-              },
-              {
-                  'name': 'Task name dsfa',
-                  'count': 9,
-              },
-              {
-                  'name': 'Task name asdf',
-                  'count': 0,
-              },
-              {
-                  'name': 'Task nasadme',
-                  'count': 13,
-              },
-            ];
-
-  $scope.tasks = tasks;
+  $scope.projects = dataService.projects;
   $scope.selected = 0;
+  $scope.currentProjectId = 0;
+  $scope.currentProjectObject = {};
+  $scope.selectedTaskObject = {};
+  $scope.selectedTask = 0;
 
-  $scope.select= function(index) {
+  $scope.select= function(index, id) {
+      $location.path("projects/" + id);
      $scope.selected = index;
   };
 
-  $scope.toggleSidenav = function(type) {
+
+  $scope.$on("$routeChangeSuccess", function () {
+      var id = $routeParams["id"];
+
+      if(id!=='undefined'){
+        console.log("Project id: " + id);
+        $scope.currentProjectId = id;
+
+        angular.forEach($scope.projects, function (value, key) {
+          if(value.id == id) {
+            $scope.currentProjectObject = value;
+            console.log(value);
+          }
+        });
+      }
+  });
+
+  $scope.toggleSidenav = function(type, date, task_id) {
+    $scope.selectedTask = task_id;
+    console.log(date);
+    
+    //ищем выбраный нами тас
+    //проходим по дням текущего проекта
+    angular.forEach($scope.currentProjectObject.days, function (value, key) {
+      if(date == value.date) {
+        //далее по таском в нужом дне, получаем объект при совпадении
+        angular.forEach(value.tasks, function(val, ke) {
+          if(val.id_task == task_id) {
+            $scope.selectedTaskObject = val;
+          }
+        });
+      }
+    });
+
     switch (type) {
       case 'add-project':
        $location.path("add-project")

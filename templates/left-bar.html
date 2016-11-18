@@ -1,4 +1,4 @@
-<div ng-controller="appController">
+<div>
   <div class="person">
     <img src="images/man.svg" width="45" alt="" />
     <span class="name">Trevor Reyes</span>
@@ -12,8 +12,8 @@
             <span class="icons8-plus "></span>
           </md-button>
       </md-subheader>
-       <div ng-repeat="task in tasks" ng-click="select($index)" ng-class="{active: $index == selected}" class="list-element">
-         <h3><span ng-bind="task.name"></span><span class="count" ng-bind="task.count"></span></h3>
+       <div ng-repeat="project in projects" ng-click="select($index, project.id)" ng-class="{active: $index == selected}" class="list-element">
+         <h3><span ng-bind="project.name"></span><span class="count" ng-bind="project.taskCount"></span></h3>
        </div>
 
 
